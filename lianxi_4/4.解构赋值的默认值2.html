@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    {
+        let [a,b = 'hello',c] = [1,2,3];
+        console.log(a,b,c);
+        //1,2
+    }
+
+    {
+        let [x,y='yello'] = ['a',undefined];
+        console.log(x,y);
+        //a  yello       //赋值undefined的情况下，他的值还是默认值
+    }
+</script>
