@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>99</p>
+	    <p>101</p>
+	    <p>102</p>
+	    <p>103</p>
+	    <p>104</p>
+	    <p>105</p>
+	    <p>106</p>
+	    <p>107</p>
+	    <p>108</p>
+	    <p>109</p>
+	    <p>1010</p>
+	</body>
+</html>
+<script type="text/javascript">
+	let aLi = document.querySelectorAll("p");
+	//得到所有的p标签   
+	//返回他的所有的值并形成一个数组
+	let arr = Array.from(aLi,function(item){
+		return item.textContent;
+	});
+	//				reduce : 分解
+	//将arr拆分为数组，并让他转换为浮点类型的值
+	let result = arr.reduce(function(emy,item,inidex){
+		//  让所有的值都相加
+		return Number.parseFloat(emy)+Number.parseFloat(item)
+	});
+	console.log(result)
+</script>
