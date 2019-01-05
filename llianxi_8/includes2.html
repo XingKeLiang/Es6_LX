@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+	        li{
+	            width:150px;
+	            height:150px;
+	            border:1px solid #ccc;
+	            float:left;
+	            margin:20px;
+	        }
+	    </style>
+	</head>
+	<body>
+		<input type="text" id="con" value="">
+    	<input type="button" id="btn" value="查找">
+	    <ul>
+	        <li>我</li>
+	        <li>想</li>
+	        <li>好</li>
+	        <li>学</li>
+	        <li>习</li>
+	    </ul>
+	</body>
+</html>
+<script type="text/javascript">
+	//点击事件
+	btn.onclick = function(){
+//		获取id为con中的值
+		let str = con.value;
+		//获取到所有的li标签
+		let li = document.querySelectorAll("li");
+		//循环li标签形成一个数组
+		let result = Array.from(li,function(item){
+			return item;
+		});
+		//将指定的值从数组中过滤出来
+		let obj = result.filter(function(item){
+			//进行判断，在数组中挑选出输入的值包含li标签中的值
+			if (str.includes(item.textContent)) {
+				item.style.background = "red"
+			} else{
+				item.style.background = "#fff"
+			}
+		});
+	}
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	Promise.all([
+		$.ajax({url:"data/server.json"}),
+		$.ajax({url: "https://resources.ninghao.net/wxapp-case/db.json"})
+	]).then(function(response){
+		let [data1,data2] = response;
+		console.log(data1,data2)
+	},function(err){
+		
+	})
+</script>

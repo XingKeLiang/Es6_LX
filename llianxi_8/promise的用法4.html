@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    let result1 = new Promise(function(resolve,reject) {
+        $.ajax({
+            url : "https://resources.ninghao.net/wxapp-case/db.json",
+            success : function (response) {
+                resolve(response);
+            },
+            error : function (err) {
+                reject(err);
+            }
+        })
+    });
+
+    let result2 = new Promise(function(resolve,reject) {
+        $.ajax({
+            url : "https://resources.ninghao.net/wxapp-case/db.json",
+            success : function (response) {
+                resolve(response);
+            },
+            error : function (err) {
+                reject(err);
+            }
+        })
+    });
+
+ 	Promise.all([
+ 		result,result2
+ 	]).then(function(arr){
+ 		let [data1,data2] = arr;
+ 		console.log(data2)
+ 		title.innerHTML = data.name
+ 	},function(){
+ 		
+ 	})
+
+
+
+</script>

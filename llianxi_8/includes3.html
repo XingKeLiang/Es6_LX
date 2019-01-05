@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+	        li{
+	            width:150px;
+	            height:150px;
+	            border:1px solid #ccc;
+	            float:left;
+	            margin:20px;
+	        }
+	    </style>
+	</head>
+	<body>
+		<input type="text" id="con" value="">
+	    <input type="button" id="btn" value="查找">
+	    <ul>
+	        <li>我</li>
+	        <li>想</li>
+	        <li>好</li>
+	        <li>学</li>
+	        <li>习</li>
+	    </ul>
+	</body>
+</html>
+<script type="text/javascript">
+	//添加点击事件
+	btn.onclick = function(){
+		//获取输入框的值
+		let str = con.value;
+		//循环li标签
+		let li = document.querySelectorAll("li");
+		//箭头i函数简化便利为数组
+		let result = Array.from(li,item =>item);
+		//过滤
+		let obj = result.filter(item =>item.style.background = str.includes(item.textContent) ? "red":"fff");
+	}
+</script>

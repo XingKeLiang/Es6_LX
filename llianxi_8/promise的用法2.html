@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+//	Promise 消除异步操作 （用书写同步的方式来书写异步代码
+	let result = new Promise(function(resolve,reject){
+									// 成功    失败
+		$.ajax({
+			url:"https://resour	ces.ninghao.net/wxapp-case/db.json",
+			//成功后返回
+			success:function(response){
+				resolve(response);
+			
+			},
+				//失败后返回
+			error:function(err){
+				rejrct(err);
+			}
+		});
+	})
+	//then 方法包括两个函数：函数1，返回的是成功的值，函数二
+//	相反
+	result.then(function(response){
+		console.log("成功")
+	},function(err){
+		console.log("失败")
+	})
+</script>
