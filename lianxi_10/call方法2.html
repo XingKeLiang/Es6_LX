@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+
+    var Pet = {
+        worde:"hello",
+        speak : function(say,sqw,sss){
+            console.log(say+''+this.words)
+        }
+    }
+    //Pet.speak("world")//hello
+    //pet speak('Speak);//
+
+    var Dog = {
+        words:'wang'
+    }
+    Pet.speak.call(Dog,'123','456');
+    // Pet.speak.call(Dog,"123");
+</script>

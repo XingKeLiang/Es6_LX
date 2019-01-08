@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       window.number = "one";
+       document.number = "two";
+
+       var s1 = {number:"three"};
+       function changeColor(){
+           console.log(this.number);
+       }
+       changeColor.apply(this)//one
+
+       //changeColor.apply();          //one (默认传参)
+       //changeColor.apply(window);
+       //changeColor.apply(document);
+        //changeColor.apply(s1);
+    </script>
+</body>
+</html>

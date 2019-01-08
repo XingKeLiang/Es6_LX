@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class point {
+        constructor(name,pass){
+            this.name = name;
+            this.pass = pass;
+        }
+    }
+    Object.assign(point.prototype,{
+        showName(){
+            console.log(this.name);
+        },
+        showpass(){
+            consoel.log(this.pass);
+        }
+    });
+
+    let Point = new posint("jack","123456");
+
+    Point.showName();
+    Point.showPass();
+
+</script>
