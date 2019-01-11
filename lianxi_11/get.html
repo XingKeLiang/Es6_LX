@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="con">
+    <input type="button" id="get" value="get">
+    <ul>
+
+
+
+    </ul>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $("#get").click(function(){
+            var a = $("#con").val();
+            $.get("https://api.apishop.net/common/oil/getOilPriceToday",{
+                apiKey : "SJZwILL28428c467a9327fbf2a7cea5cd7bb7d347860007",
+                province:a
+            },function(info){
+                var data =  JSON.parse(info);
+                //遍历得到的数组
+                $.each(data.result.list[0],function(index,value){
+                    var li = $("<li>"+ value +"</li>")
+                    $("ul").append(li);
+                })
+            })
+        })
+    })
+</script>
