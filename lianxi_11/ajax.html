@@ -5,16 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th{border: 1px solid #ccc;padding:0 15px}
+        table tr{
+            height: 35px;
+            padding:0 15px;
+        }
+    </style>
 </head>
 <body>
-    
+    <input type="text" placeholder="请输入关键字" id="concant">
+    <input type="button" value="ajax" id="but">
+    <table>
+        <thade>
+            <tr>
+                <th>卡牌ID</th>
+                <th>卡牌名称</th>
+                <th>英文名</th>
+                <th>职业</th>
+                <th>罕见度</th>
+                <th>卡牌类型</th>
+                <th>生命值</th>
+                <th>攻击力</th>
+                <th>特别技能</th>
+                <th>卡牌描述</th>
+                <th>图片地址</th>
+            </tr>
+        </thade>
+        <tbody id="bod">
+                <tr></tr>
+        </tbody>
+       
+    </table>
 </body>
 </html>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script>
     
     $(function(){
-        
+        $("#but").click(function(){
+            var cValue = $("#concant").val();
+            $.ajax({
+                url:"https://api.apishop.net/common/hearthStone/queryCardListByKeyword",
+                data:{
+                    apiKey:"SJZwILL28428c467a9327fbf2a7cea5cd7bb7d347860007",
+                    keyword :cValue
+                },
+                type:"GET",
+                dataType:"json",
+                success:function(responseText){
+                    $.each(responseText.result.cardList[0],function(key,value){
+                        console.log(key);
+                        var td = $("<td>"+ value +"</td>")
+                        $("#bod tr").append(td);
+                    })
+                },
+                error:function(error){
+                    console.log(error);
+                },
+                async:true
+            })
+        })
     })
 
 </script>
